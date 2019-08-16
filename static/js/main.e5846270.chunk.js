@@ -1,2 +1,0 @@
-(window.webpackJsonpvisualization=window.webpackJsonpvisualization||[]).push([[0],[function(o,n,i){o.exports=i(1)},function(o,n){console.log("hello")}],[[0,1]]]);
-//# sourceMappingURL=main.e5846270.chunk.js.map
