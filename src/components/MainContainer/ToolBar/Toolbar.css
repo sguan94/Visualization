@@ -1,5 +1,5 @@
 .toolbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -13,17 +13,19 @@
     padding: 0 1rem;
 }
 .toolbar__logo {
+    float: left;
     margin-left: 1rem;
 }
 .toolbar__logo a{
     color: white;
     text-decoration: none;
-    size: 1.5rem;
+    font-size: 1.5rem;
 }
 .spacer {
-    flex: 1;
+    margin: 0 400px 0 400px;
 }
 .toolbar__navigation-items ul{
+    float: right;
     list-style: none;
     margin: 0;
     padding: 0;

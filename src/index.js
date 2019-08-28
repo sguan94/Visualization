@@ -1,43 +1,52 @@
 import React from "react";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import logger from "redux-logger";
 import { render } from "react-dom";
-import Toolbar from './components/ToolBar/Toolbar';
-import SideDrawer from './components/SideDrawer/SideDrawer';
-import BackDrop from './components/BackDrop/BackDrop'
+import { Provider } from "react-redux";
+import App from "./components/App";
 
-class App extends React.Component {
-
-    state = {
-        sideDrawerOpen: false
-    };
-
-    drawerToggleClickHandler = () => {
-        this.setState((prevState) => {
-            return {sideDrawerOpen : !prevState.sideDrawerOpen}
-        });
-    };
-
-    backDropClickHandler = () => {
-        this.setState((prevState) => {
-            return {sideDrawerOpen : false}
-        })
-    }
-
-    render() {
-        let backDrop;
-        if(this.state.sideDrawerOpen){
-            backDrop = <BackDrop click={this.backDropClickHandler}/>;
-        }
-        return (
-            <div style={{height: '100%'}}>
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-                <SideDrawer show={this.state.sideDrawerOpen}/>
-                {backDrop}
-                <main style={{marginTop: '64px'}}>
-                    <p>dfhgfdfsgfnwesgdhesgdgd</p>
-                </main>
-            </div>
-        )
-    }
+const initalState = {
+    showSideDraw: false,
+    num: 1
 }
 
-render(<App/>, window.document.getElementById("app"));
+const showSideDrawReducer = (state = initalState, action) => {
+    switch (action.type) {
+        case "ADD":
+            state = {
+                ...state,
+                num: state.num + action.payload
+            };
+            break;
+        case "TOGGLESIDEDRAWER":
+                state = {
+                    ...state,
+                    showSideDraw: !state.showSideDraw
+                };
+                break;
+    }
+    return state;
+};
+
+const store = createStore(
+    combineReducers({showSideDrawReducer}), 
+    {}, 
+    applyMiddleware(logger)
+);
+
+store.dispatch({
+    type: "ADD",
+    payload: 1
+});
+
+store.dispatch({
+    type: "ADD",
+    payload: 1
+});
+
+render(
+    <Provider store={store}>
+        <App/>
+    </Provider>, 
+    window.document.getElementById("app")
+);
