@@ -3,8 +3,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: darkslateblue;
-    height: 56px;
+    background-color: #7da0ff;
+    height: 7%;
 }
 .toolbar__navigation {
     display: flex;

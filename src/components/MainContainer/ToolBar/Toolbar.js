@@ -1,5 +1,5 @@
 import React from "react";
-import './Toolbar.css';
+import '../../../css/Toolbar.css';
 import DrawerToggleButton from "./DrawerToggleButton";
 
 class Toolbar extends React.Component{
@@ -7,13 +7,14 @@ class Toolbar extends React.Component{
         return (
             <header className="toolbar">
                 <nav className="toolbar__navigation">
+                    <DrawerToggleButton/>
                     <div className="toolbar__logo"><a href="/">THE LOGO</a></div>
-                    <div className="toolbar__navigation-items">
+                    {/* <div className="toolbar__navigation-items">
                         <ul>
                             <li><a href="/">Product</a></li>
                             <li><a href="/">User</a></li>
                         </ul>
-                    </div>
+                    </div> */}
                 </nav>
             </header>
 

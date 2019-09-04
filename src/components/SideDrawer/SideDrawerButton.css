@@ -1,9 +1,0 @@
-.sidedrawer-button a {
-    color:blueviolet;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-.sidedrawer-button a:hover,
-.sidedrawer-button a:active {
-    color:greenyellow;
-}

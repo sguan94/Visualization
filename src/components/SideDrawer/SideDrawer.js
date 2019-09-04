@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import './SideDrawer.css'
+import '../../css/SideDrawer.css';
 import SideDrawerButton from "./SideDrawerButton";
 
 class SideDrawer extends React.Component {
@@ -9,27 +9,27 @@ class SideDrawer extends React.Component {
     constructor(props) {
         super(props);
         this.buttonList = [
-            {text: "LinkedList"},
-            {text: "ArrayList"},
+            {text: "1"},
+            {text: "2"},
+            {text: "3"},
+            {text: "4"},
         ];
     };
 
     render(){
-
-        const buttonList = this.buttonList.map(
-            (item, key) => <SideDrawerButton text={item.text} key={key}/>
-        )
-
-        let sideDraweClassName;
-        if(!this.props.showSideDrawerReducer.showSideDraw){
-            sideDraweClassName = "side-drawer open";
+        let sideDrawerClassName;
+        if(!this.props.sideDrawerReducer.showSideDrawer){
+            sideDrawerClassName = "side-drawer open";
         }else{
-            sideDraweClassName = "side-drawer";
+            sideDrawerClassName = "side-drawer";
         }
 
         return (
-            <div className={sideDraweClassName}>
-                {buttonList}
+            <div className={sideDrawerClassName}>
+                <div className="side-drawer-header">
+                    <span>Visualizer</span>
+                </div>
+                {this.buttonList.map((item, key) => <SideDrawerButton text={item.text} key={key}/>)}
             </div>
         );
     }
@@ -37,7 +37,7 @@ class SideDrawer extends React.Component {
 
 const mapStateToProps = (state) => {
     return{
-        showSideDrawerReducer: state.showSideDrawReducer
+        sideDrawerReducer: state.sideDrawerReducer
     };
 };
 

@@ -1,0 +1,89 @@
+.button_su{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.su_button_circle{
+    background-color: rgb(20, 20, 20);
+    border-radius: 1000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    pointer-events: none;
+    /*animation-timing-function: ease-in-out; */
+}
+
+.button_su_inner{
+    width: 100%;
+    display: inline-block;
+    background:#09194d;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 3px;
+    transition: 400ms;
+    padding: 10px;
+    z-index: 2;
+}
+
+.button_su_inner a:hover, a:visited, a:link, a:active{
+    color: white;
+    text-decoration: none;
+}
+
+.button_text_container{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.explode-circle {
+    animation: explode 0.75s forwards;
+}
+
+.desplode-circle{
+    animation: desplode 0.75s forwards;
+}
+
+@keyframes explode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: #09194d;
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color:  #a1ddffcc;
+    }
+}
+
+@keyframes desplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color:  #a1ddffcc;
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: #09194d;
+    }
+}

@@ -1,0 +1,50 @@
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button__line1 {
+    width: 30px;
+    height: 2px;
+    background: white;
+    transform: translateY(0) rotate(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+.toggle-button__line1.tlcw {
+    transform: translateY(500%) rotate(45deg);
+}
+
+.toggle-button__line2 {
+    width: 30px;
+    height: 2px;
+    background: white;
+    transform: translateY(0) rotate(0deg);
+    transition: translateY(1px) transform 0.3s ease-out;
+}
+.toggle-button__line2.cccw {
+    transform: rotate(-45deg);
+}
+
+.toggle-button__line3 {
+    width: 30px;
+    height: 2px;
+    background: white;
+    transform: translateY(0) rotate(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+.toggle-button__line3.brcw {
+    transform: translateY(-500%) rotate(45deg);
+}

@@ -2,17 +2,16 @@ import React from "react";
 import SideDrawer from './SideDrawer/SideDrawer';
 import MainContainer from "./MainContainer/MainContainer";
 import {connect} from "react-redux";
-import "./App.css"
+import {toggleSideDrawer} from "../actions/sideDrawerAction";
+import "../css/App.css"
 
 class App extends React.Component {
 
     render() {
-        console.log(this.props);
         return (
             <div className="appContainer">
                 <SideDrawer/>
                 <MainContainer/>
-                <button onClick={() => this.props.toggleSideDrawer()}/>
             </div>
         )
     }
@@ -27,9 +26,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return{
         toggleSideDrawer: () => {
-            dispatch({
-                type: "TOGGLESIDEDRAWER"
-            });
+            dispatch(toggleSideDrawer());
         }
     };
 };
