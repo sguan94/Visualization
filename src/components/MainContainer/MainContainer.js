@@ -1,27 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
 import Toolbar from "./ToolBar/Toolbar";
-import BackDrop from "./BackDrop/BackDrop";
+// import BackDrop from "./BackDrop/BackDrop";
 import '../../css/MainContainer.css';
+import MainContent from "./MainContent/MainContent";
 
 class MainContainer extends React.Component {
 
     render(){
-        let mainContainerClassName;
-        if(!this.props.sideDrawerReducer.showSideDrawer){
-            mainContainerClassName = "main-container shrink";
-        }else{
-            mainContainerClassName = "main-container";
-        }
 
         return (
-            <div className={mainContainerClassName}>
-                <BackDrop />
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-                
-                <main style={{marginTop: '64px'}}>
-                    <p>{this.props.sideDrawerButtonReducer.content}</p>
-                </main>
+            <div className="main-container">
+                <div className="toolBarDiv">
+                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+                </div>
+                <div className="titleDiv">
+                    <div>{this.props.sideDrawerButtonReducer.content}</div>
+                </div>
+                <div className="mainContentDiv">
+                    <MainContent/>
+                </div>
+                <div className="controllerDiv">
+                    
+                </div>
             </div>
         );
     }

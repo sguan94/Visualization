@@ -9,9 +9,9 @@ class DrawerToggleButton extends React.Component {
 
         return(
             <button className="toggle-button" onClick={() => this.props.toggleSideDrawer()}>
-                <div className={(this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line1' : 'toggle-button__line1 tlcw')}/>
-                <div className={(this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line2' : 'toggle-button__line2 cccw')}/>
-                <div className={(this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line3' : 'toggle-button__line3 brcw')}/>
+                <div className={(!this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line1' : 'toggle-button__line1 tlcw')}/>
+                <div className={(!this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line2' : 'toggle-button__line2 cccw')}/>
+                <div className={(!this.props.sideDrawerReducer.showSideDrawer ? 'toggle-button__line3' : 'toggle-button__line3 brcw')}/>
             </button>
         )
     }

@@ -31,7 +31,7 @@
     height: 2px;
     background: white;
     transform: translateY(0) rotate(0deg);
-    transition: translateY(1px) transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
 }
 .toggle-button__line2.cccw {
     transform: rotate(-45deg);

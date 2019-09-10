@@ -1,0 +1,8 @@
+.codeShowcase {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    white-space: pre;
+}

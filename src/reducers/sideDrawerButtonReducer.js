@@ -8,6 +8,8 @@ const sideDrawerButtonReducer = (state = {
                 content: action.payload
             };
             break;
+        default:
+            
     }
     return state;
 };

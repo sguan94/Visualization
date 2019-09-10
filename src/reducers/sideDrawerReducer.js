@@ -1,5 +1,5 @@
 const sideDrawerReducer = (state = {
-    showSideDrawer: false,
+    showSideDrawer: true,
     num: 1
 }, action) => {
     switch (action.type) {
@@ -15,6 +15,8 @@ const sideDrawerReducer = (state = {
                     showSideDrawer: !state.showSideDrawer
                 };
                 break;
+        default:
+            
     }
     return state;
 };

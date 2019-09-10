@@ -9,27 +9,23 @@ class SideDrawer extends React.Component {
     constructor(props) {
         super(props);
         this.buttonList = [
-            {text: "1"},
-            {text: "2"},
-            {text: "3"},
-            {text: "4"},
+            {text: "Bubble Sort"},
+            {text: "Selection Sort"},
+            {text: "Insertion Sort"},
+            {text: "Merge Sort"},
+            {text: "Quick Sort"},
         ];
     };
 
     render(){
-        let sideDrawerClassName;
-        if(!this.props.sideDrawerReducer.showSideDrawer){
-            sideDrawerClassName = "side-drawer open";
-        }else{
-            sideDrawerClassName = "side-drawer";
-        }
-
         return (
-            <div className={sideDrawerClassName}>
+            <div className="side-drawer">
                 <div className="side-drawer-header">
-                    <span>Visualizer</span>
+                    Visualizer
                 </div>
-                {this.buttonList.map((item, key) => <SideDrawerButton text={item.text} key={key}/>)}
+                <div className="side-drawer-buttonList">
+                    {this.buttonList.map((item, key) => <div className="buttonContainer" key={key}><SideDrawerButton text={item.text} key={key}/></div>)}
+                </div>
             </div>
         );
     }
