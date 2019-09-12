@@ -14,17 +14,25 @@
 
 #verticalLine {
     width: 2%;
-    /* border-left: thick solid rgb(220, 220, 240);
-    border-left: solid;
-    border-right: solid;
-    border-color: rgb(220, 220, 240); */
     cursor: col-resize;
 }
 
 #codeDiv {
     display: flex;
-    overflow: auto;
     border-radius: 1vw;
     border-color: rgb(220, 220, 240); 
     background: rgb(50, 50, 140);
+    padding-top: 1vw; 
+    padding-bottom: 1vw; 
+    padding-left: 1vw; 
+    padding-right: 1vw; 
 }
+
+
+.codeShowcaseContainer {
+    display: flex;
+    overflow: auto;
+}
+.codeShowcaseContainer::-webkit-scrollbar { 
+    display: none; 
+} 

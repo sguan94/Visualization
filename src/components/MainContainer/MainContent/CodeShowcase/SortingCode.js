@@ -31,37 +31,38 @@ const SortingCode = {
 }`,
 // ======================================================
     selectionSort: 
-`void selectionSort(int arr[], int n)  
-{  
-    int i, j, min_idx;  
-    for (i = 0; i < n-1; i++)  
-    {  
-        min_idx = i;  
-        for (j = i+1; j < n; j++)  
-        if (arr[j] < arr[min_idx])  
-            min_idx = j;  
-        swap(&arr[min_idx], &arr[i]);  
-    }  
-}`,
+`void selectionSort(int arr[]) 
+{ 
+    int n = arr.length; 
+    for (int i = 0; i < n-1; i++) 
+    { 
+        int min_idx = i; 
+        for (int j = i+1; j < n; j++) 
+            if (arr[j] < arr[min_idx]) 
+                min_idx = j; 
+        int temp = arr[min_idx]; 
+        arr[min_idx] = arr[i]; 
+        arr[i] = temp; 
+    } 
+} `,
 // ======================================================
     mergeSort:
 `void merge(int arr[], int l, int m, int r) 
 { 
-    // Find sizes of two subarrays to be merged 
-    int n1 = m - l + 1; 
-    int n2 = r - m; 
+    int p = m - l + 1; 
+    int q = r - m; 
 
-    int L[] = new int [n1]; 
-    int R[] = new int [n2]; 
+    int L[] = new int [p]; 
+    int R[] = new int [q]; 
 
-    for (int i=0; i<n1; ++i) 
+    for (int i = 0; i < p; ++i) 
         L[i] = arr[l + i]; 
-    for (int j=0; j<n2; ++j) 
+    for (int j = 0; j < q; ++j) 
         R[j] = arr[m + 1+ j]; 
 
     int i = 0, j = 0; 
     int k = l; 
-    while (i < n1 && j < n2) 
+    while (i < p && j < q) 
     { 
         if (L[i] <= R[j]) 
         { 
@@ -76,14 +77,14 @@ const SortingCode = {
         k++; 
     } 
 
-    while (i < n1) 
+    while (i < p) 
     { 
         arr[k] = L[i]; 
         i++; 
         k++; 
     } 
 
-    while (j < n2) 
+    while (j < q) 
     { 
         arr[k] = R[j]; 
         j++; 
@@ -95,21 +96,19 @@ void sort(int arr[], int l, int r)
 { 
     if (l < r) 
     { 
-
-        int m = (l+r)/2; 
+        int m = (l + r)/2; 
         sort(arr, l, m); 
-        sort(arr , m+1, r); 
+        sort(arr , m + 1, r); 
         merge(arr, l, m, r); 
     } 
-} 
-`,
+} `,
 // ======================================================
     quickSort:
 `int partition(int arr[], int low, int high) 
 { 
     int pivot = arr[high];  
-    int i = (low-1); // index of smaller element 
-    for (int j=low; j<high; j++) 
+    int i = (low - 1);
+    for (int j = low; j < high; j++) 
     {
         if (arr[j] < pivot) 
         { 
@@ -124,7 +123,7 @@ void sort(int arr[], int l, int r)
     arr[i+1] = arr[high]; 
     arr[high] = temp; 
 
-    return i+1; 
+    return i + 1;
 } 
 
 void sort(int arr[], int low, int high) 
@@ -135,8 +134,7 @@ void sort(int arr[], int low, int high)
         sort(arr, low, pi-1); 
         sort(arr, pi+1, high); 
     } 
-} 
-`
+} `
 }
 
 export default SortingCode;

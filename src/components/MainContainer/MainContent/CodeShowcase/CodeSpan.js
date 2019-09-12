@@ -1,14 +1,15 @@
 import React from "react";
+import "../../../../css/CodeSpan.css"
 
 class CodeSpan extends React.Component {
 
-    getStyle(text){
+    getColor(text){
         const variableType = [
             "boolean", "int", "double", "long", 
             "byte", "char", "float", "short", "void", "null"
         ];
         const operator = [
-            "+", "-", "*", "/", "=", "<", ">"
+            "+", "-", "*", "/", "=", "<", ">", "&"
         ];
         const accessSpecifier = [
             "private", "public", "protected"
@@ -25,50 +26,66 @@ class CodeSpan extends React.Component {
         ];
         const funcName = [
             "bubbleSort", "selectionSort", "insertionSort", "merge", "sort", "partition"
-        ]
+        ];
+        const punctuation = [
+            ";", ","
+        ];
         if(variableType.includes(text)){
-            return {
-                color: "rgb(200, 200, 200)",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "rgb(200, 200, 200)"
+            // });
+            return "variableType";
         }else if(operator.includes(text)){
-            return {
-                color: "rgb(220, 220, 220)",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "tomato"
+            // });
+            return "operator";
         }else if(accessSpecifier.includes(text)){
-            return {
-                color: "yellow",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "yellow"
+            // });
+            return "accessSpecifier";
         }else if(keyWord.includes(text)){
-            return {
-                color: "yellow",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "yellow"
+            // });
+            return "keyWord";
         }else if(bracket.includes(text)){
-            return {
-                marginLeft: "0.2vw",
-                marginRight: "0.2vw",
-                color: "rgb(240, 240, 240)",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     marginLeft: "0.2vw",
+            //     marginRight: "0.2vw",
+            //     color: "rgb(240, 240, 240)",
+            // });
+            return "bracket";
         }else if(!isNaN(text)){
-            return {
-                color: "pink",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "rgb(150, 200, 50)"
+            // });
+            return "number";
         }else if(funcName.includes(text)){
-            return {
-                color: "orange",
-            };
+            // this.setState({
+            //     ...this.state,
+            //     color: "orange"
+            // });
+            return "funcName";
+        }else if (punctuation.includes(text)){
+            return "else";
         }else{
-            return {
-                color: "rgb(150, 200, 100)",
-            };
+            return "variable";
         }
     };
 
     render(){
         let text = this.props.code;
-        let spanStyle = this.getStyle(text);
-
+        let color = this.getColor(text);
         return (
-            <span style={spanStyle}>
+            <span className={"codeSpan "+ color}>
                 {text}
             </span>
         )

@@ -1,0 +1,47 @@
+.codeSpan {
+    font-family: "Hack";
+    text-align: center;
+}
+
+.codeSpanLoad {
+    font-family: "Hack";
+    text-align: center;
+}
+
+.variableType {
+    color: greenyellow;
+}
+
+.operator {
+    color: rosybrown;
+}
+
+.accessSpecifier {
+    color: yellow;
+}
+
+.keyWord {
+    color: yellow;
+}
+
+.bracket {
+    width: 1vw;
+    color: rgb(240, 240, 240);
+}
+
+.number {
+    color: rgb(150, 200, 50);
+}
+
+.funcName {
+    color: orange;
+}
+
+.else {
+    width: 1vw;
+    color: white;
+}
+
+.variable {
+    color: powderblue;
+}

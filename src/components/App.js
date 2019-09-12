@@ -3,7 +3,7 @@ import SideDrawer from './SideDrawer/SideDrawer';
 import MainContainer from "./MainContainer/MainContainer";
 import {connect} from "react-redux";
 import {toggleSideDrawer} from "../actions/sideDrawerAction";
-import "../css/App.less"
+import "../css/App.css"
 
 class App extends React.Component {
 
@@ -32,24 +32,24 @@ class App extends React.Component {
     }
 
     render() {
-        // let sideDrawerDivClassName;
-        // let mainContainerDivClassName;
-        // if(this.props.sideDrawerReducer.showSideDrawer){
-        //     sideDrawerDivClassName = "sideDrawerDiv";
-        //     mainContainerDivClassName = "mainContainerDiv shrink";
-        // }else{
-        //     sideDrawerDivClassName = "sideDrawerDiv hide";
-        //     mainContainerDivClassName = "mainContainerDiv";
-        // }
+        let sideDrawerDivClassName;
+        let mainContainerDivClassName;
+        if(this.props.sideDrawerReducer.showSideDrawer){
+            sideDrawerDivClassName = "sideDrawerDiv";
+            mainContainerDivClassName = "mainContainerDiv shrink";
+        }else{
+            sideDrawerDivClassName = "sideDrawerDiv hide";
+            mainContainerDivClassName = "mainContainerDiv";
+        }
 
         return (
-            // <div className="appContainer" style={{width: this.state.width, height: this.state.height}}>
-            //     <div className={sideDrawerDivClassName}><SideDrawer/></div>
-            //     <div className={mainContainerDivClassName}><MainContainer/></div>
-            // </div>
-            <div className="a">
-                sdfdsfsa
+            <div className="appContainer" style={{width: this.state.width, height: this.state.height}}>
+                <div className={sideDrawerDivClassName}><SideDrawer/></div>
+                <div className={mainContainerDivClassName}><MainContainer/></div>
             </div>
+            // <div className="a">
+            //     sdfdsfsa
+            // </div>
         )
     }
 }

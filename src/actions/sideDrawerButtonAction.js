@@ -4,3 +4,17 @@ export function setContent(value) {
         payload: value
     };
 }
+
+export function setAlgorithm(value) {
+    return {
+        type: "SETALGORITHM",
+        payload: value
+    }
+}
+
+export function setCode(value) {
+    return {
+        type: "SETCODE",
+        payload: value
+    }
+}

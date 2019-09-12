@@ -10,8 +10,8 @@ class MainContent extends React.Component {
     constructor(){
         super();
         this.state = {
-            viewWidth: "65%",
-            codeWidth: "35%"
+            viewWidth: "59%",
+            codeWidth: "39%"
         }
         this.vlOnMouseMove = this.vlOnMouseMove.bind(this);
         this.vlOnMouseDown = this.vlOnMouseDown.bind(this);
@@ -31,40 +31,28 @@ class MainContent extends React.Component {
     }
 
     vlOnMouseDown(){
-        document.getElementById("mainContent").addEventListener("mousemove", this.vlOnMouseMove, false);
+        window.addEventListener("mousemove", this.vlOnMouseMove, false);
+        window.addEventListener("mouseup", this.vlOnMouseUp, false);
     }
 
     vlOnMouseUp(){
-        document.getElementById("mainContent").removeEventListener("mousemove", this.vlOnMouseMove, false);
+        console.log("up");
+        window.removeEventListener("mousemove", this.vlOnMouseMove, false);
+        window.removeEventListener("mouseup", this.vlOnMouseUp, false);
     }
 
     render(){
-        let codeName = "";
-        switch (this.props.sideDrawerButtonReducer.content) {
-            case "Bubble Sort":
-                codeName = SortingCode.bubbleSort;
-                break;
-            case "Selection Sort":
-                codeName = SortingCode.selectionSort;
-                break;
-            case "Insertion Sort":
-                codeName = SortingCode.insertionSort;
-                break;
-            case "Merge Sort":
-                codeName = SortingCode.mergeSort;
-                break;
-            case "Quick Sort":
-                codeName = SortingCode.quickSort;
-                break;
-        }
+
         return (
             <div id="mainContent">
                 <div id="viewDiv" style={{width: (this.state.viewWidth)}}>
                     <ViewShowcase/>
                 </div>
-                <div id="verticalLine" onMouseDown={this.vlOnMouseDown} onMouseUp={this.vlOnMouseUp}></div>
+                <div id="verticalLine" onMouseDown={this.vlOnMouseDown}></div>
                 <div id="codeDiv" style={{width: (this.state.codeWidth)}}>
-                    <CodeShowcase code={codeName}/>
+                    <div className="codeShowcaseContainer">
+                        <CodeShowcase/>
+                    </div>
                 </div>
             </div>
         );

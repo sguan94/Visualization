@@ -1,3 +1,5 @@
+@import "./Colors.scss";
+
 .button_su{
     width: 100%;
     overflow: hidden;
@@ -36,7 +38,7 @@
 }
 
 .button_su_inner a:hover, a:visited, a:link, a:active{
-    color: white;
+    color: $sideDrawerText;
     text-decoration: none;
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import '../../css/SideDrawer.css';
+import '../../css/SideDrawer.scss';
 import SideDrawerButton from "./SideDrawerButton";
 
 class SideDrawer extends React.Component {
