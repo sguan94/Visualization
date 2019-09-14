@@ -9,7 +9,12 @@
 
 #viewDiv {
     display: flex;
-    overflow: hidden;
+    border-radius: 1vw;
+    background: wheat;
+    padding-top: 1vw; 
+    padding-bottom: 1vw; 
+    padding-left: 1vw; 
+    padding-right: 1vw; 
 }
 
 #verticalLine {
@@ -20,15 +25,12 @@
 #codeDiv {
     display: flex;
     border-radius: 1vw;
-    border-color: rgb(220, 220, 240); 
-    background: rgb(50, 50, 140);
+    background: wheat;
     padding-top: 1vw; 
     padding-bottom: 1vw; 
     padding-left: 1vw; 
     padding-right: 1vw; 
 }
-
-
 .codeShowcaseContainer {
     display: flex;
     overflow: auto;

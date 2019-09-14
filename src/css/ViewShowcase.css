@@ -4,7 +4,5 @@
     align-content: center;
     justify-content: center;
     width: 100%;
-    border-radius: 1vw;
-    border-style: solid;
-    border-color: rgb(220, 220, 240); 
+    color:whitesmoke;
 }

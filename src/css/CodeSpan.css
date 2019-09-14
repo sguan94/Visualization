@@ -9,11 +9,11 @@
 }
 
 .variableType {
-    color: greenyellow;
+    color: darkgreen;
 }
 
 .operator {
-    color: rosybrown;
+    color: darksalmon;
 }
 
 .accessSpecifier {
@@ -21,27 +21,27 @@
 }
 
 .keyWord {
-    color: yellow;
+    color: rgb(50, 50, 140);
 }
 
 .bracket {
     width: 1vw;
-    color: rgb(240, 240, 240);
+    color: rgb(30, 30, 30);
 }
 
 .number {
-    color: rgb(150, 200, 50);
+    color: darkslategrey;
 }
 
 .funcName {
-    color: orange;
+    color: saddlebrown;
 }
 
 .else {
     width: 1vw;
-    color: white;
+    color: darkslateblue;
 }
 
 .variable {
-    color: powderblue;
+    color: darkmagenta;
 }

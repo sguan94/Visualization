@@ -1,4 +1,4 @@
-.main-container {
+#main-container {
     position: relative;
     /* background-image: url(../image/maincontainer-background.jpg); */
     display: flex;
@@ -22,6 +22,7 @@
     margin-top: 2%;
     margin-left: 7%;
     margin-right: 7%;
+    border-radius: 1vw;
     color: gray;
     font-size: 2vw;
     overflow: hidden;
@@ -29,22 +30,26 @@
 .titleDiv div {
     margin-left: 1vw;
 }
-.mainContentDiv {
-    height: 60%;
-    display: flex;
-    flex-direction: row;
-    /* border-style: solid; */
-    border-color: rgb(220, 220, 240);
+
+#mainContentDiv {
+    height: 85%;
     margin-left: 3%;
     margin-right: 3%;
-}
-.controllerDiv {
-    height: 21%;
+    margin-bottom: 3%;
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-color: rgb(220, 220, 240);
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-bottom: 2%;
+    flex-wrap: nowrap;
+}
+#codeViewDiv {
+    display: flex;
+    border-radius: 1vw;
+}
+#horizontalLine {
+    height: 2%;
+    cursor: row-resize;
+}
+#controllerDiv {
+    display: flex;
+    border-radius: 1vw;
+    background: wheat;
 }
