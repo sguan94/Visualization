@@ -21,8 +21,9 @@ const sideDrawerButtonReducer = (state = {
                 ...state,
                 code: action.payload
             }
+            break;
         default:
-            
+            break;
     }
     return state;
 };

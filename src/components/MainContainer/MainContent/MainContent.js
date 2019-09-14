@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import CodeShowcase from "./CodeShowcase/CodeShowcase";
-import SortingCode from "./CodeShowcase/SortingCode";
 import ViewShowcase from "./ViewShowcase/ViewShowcase";
 import {setCodeWidth, setViewWidth} from "../../../actions/divWidthAction";
 import '../../../css/MainContent.css';
@@ -13,6 +12,7 @@ class MainContent extends React.Component {
         this.vlOnMouseMove = this.vlOnMouseMove.bind(this);
         this.vlOnMouseDown = this.vlOnMouseDown.bind(this);
         this.vlOnMouseUp = this.vlOnMouseUp.bind(this);
+        this.setWidth.bind(this);
     }
 
     vlOnMouseMove(event){
@@ -24,7 +24,6 @@ class MainContent extends React.Component {
 
         this.props.setViewWidth(`${y}%`);
         this.props.setCodeWidth(`${x}%`);
-        console.log(this.props.divWidthReducer.viewWidth + "   " + this.props.divWidthReducer.codeWidth);
     }
 
     vlOnMouseDown(){
@@ -33,9 +32,16 @@ class MainContent extends React.Component {
     }
 
     vlOnMouseUp(){
-        console.log("up");
         window.removeEventListener("mousemove", this.vlOnMouseMove, false);
         window.removeEventListener("mouseup", this.vlOnMouseUp, false);
+    }
+
+    setWidth = (codeWidth) => {
+        let totalWidth = document.getElementById("mainContent").offsetWidth;
+        let y = ((codeWidth + 20) * 100)/ totalWidth;
+        let x = 98 - y;
+        this.props.setViewWidth(`${y}%`);
+        this.props.setCodeWidth(`${x}%`);
     }
 
     render(){
@@ -47,7 +53,7 @@ class MainContent extends React.Component {
                 <div id="verticalLine" onMouseDown={this.vlOnMouseDown}></div>
                 <div id="codeDiv" style={{width: (this.props.divWidthReducer.codeWidth)}}>
                     <div className="codeShowcaseContainer">
-                        <CodeShowcase/>
+                        <CodeShowcase setWidth={this.setWidth}/>
                     </div>
                 </div>
             </div>
