@@ -4,14 +4,6 @@ import "../../../../css/CodeLine.scss"
 
 class CodeLine extends React.Component {
 
-
-    // componentWillUpdate(){
-    //     const myNode = document.getElementsByClassName("foo");
-    //     while (myNode.firstChild) {
-    //       myNode.removeChild(myNode.firstChild);
-    //     }
-    // }
-
     render(){
         let spans = this.props.code.split(/([\W+/])/);
         const codeText = (        
@@ -24,7 +16,7 @@ class CodeLine extends React.Component {
 
         return (
             <div className="codeLine">
-                <div className="index">{this.props.index}</div>
+                <div className="index">{this.props.index + 1}</div>
                 {codeText}
             </div>
         )

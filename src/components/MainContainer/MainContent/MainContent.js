@@ -3,16 +3,13 @@ import { connect } from "react-redux";
 import CodeShowcase from "./CodeShowcase/CodeShowcase";
 import SortingCode from "./CodeShowcase/SortingCode";
 import ViewShowcase from "./ViewShowcase/ViewShowcase";
+import {setCodeWidth, setViewWidth} from "../../../actions/divWidthAction";
 import '../../../css/MainContent.css';
 
 class MainContent extends React.Component {
 
     constructor(){
         super();
-        this.state = {
-            viewWidth: "59%",
-            codeWidth: "39%"
-        }
         this.vlOnMouseMove = this.vlOnMouseMove.bind(this);
         this.vlOnMouseDown = this.vlOnMouseDown.bind(this);
         this.vlOnMouseUp = this.vlOnMouseUp.bind(this);
@@ -22,12 +19,12 @@ class MainContent extends React.Component {
         let totalWidth = document.getElementById("mainContent").offsetWidth;
         let viewWidth = event.pageX - document.getElementById("mainContent").getBoundingClientRect().x;
         let codeWidth = totalWidth - viewWidth;
-        let x = `${(viewWidth * 100 - 1)/ totalWidth}%`;
-        let y = `${(codeWidth * 100 - 1)/ totalWidth}%`;
-        this.setState({
-            viewWidth: x,
-            codeWidth: y
-        })
+        let x = Math.min(Math.max((viewWidth * 100 - 1)/ totalWidth, 0), 98);
+        let y = Math.min(Math.max((codeWidth * 100 - 1)/ totalWidth, 0), 98);
+
+        this.props.setViewWidth(`${y}%`);
+        this.props.setCodeWidth(`${x}%`);
+        console.log(this.props.divWidthReducer.viewWidth + "   " + this.props.divWidthReducer.codeWidth);
     }
 
     vlOnMouseDown(){
@@ -42,14 +39,13 @@ class MainContent extends React.Component {
     }
 
     render(){
-
         return (
             <div id="mainContent">
-                <div id="viewDiv" style={{width: (this.state.viewWidth)}}>
+                <div id="viewDiv" style={{width: (this.props.divWidthReducer.viewWidth)}}>
                     <ViewShowcase/>
                 </div>
                 <div id="verticalLine" onMouseDown={this.vlOnMouseDown}></div>
-                <div id="codeDiv" style={{width: (this.state.codeWidth)}}>
+                <div id="codeDiv" style={{width: (this.props.divWidthReducer.codeWidth)}}>
                     <div className="codeShowcaseContainer">
                         <CodeShowcase/>
                     </div>
@@ -62,8 +58,20 @@ class MainContent extends React.Component {
 const mapStateToProps = (state) => {
     return{
         sideDrawerReducer: state.sideDrawerReducer,
-        sideDrawerButtonReducer: state.sideDrawerButtonReducer
+        sideDrawerButtonReducer: state.sideDrawerButtonReducer,
+        divWidthReducer: state.divWidthReducer
     };
 };
 
-export default connect(mapStateToProps)(MainContent);
+const mapDispatchToProps = (dispatch) => {
+    return{
+        setViewWidth: (value) => {
+            dispatch(setCodeWidth(value)); 
+        },
+        setCodeWidth: (value) => {
+            dispatch(setViewWidth(value));
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
