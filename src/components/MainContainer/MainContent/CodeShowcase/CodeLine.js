@@ -1,5 +1,6 @@
 import React from "react";
 import CodeSpan from "./CodeSpan";
+import {connect} from "react-redux";
 import "../../../../css/CodeLine.scss"
 
 class CodeLine extends React.Component {
@@ -16,8 +17,12 @@ class CodeLine extends React.Component {
 
     render(){
         let spans = this.props.code.split(/([\W+/])/);
+        let codeClass = "codeLine";
+        if((this.props.index + 1) === this.props.sortingControllerReducer.highlightLine){
+            codeClass = "codeLineHightlight";
+        }
         return (
-            <div className="codeLine">
+            <div className={codeClass} ref={this.props.setRef}>
                 <div className="index" ref={this.indexRef}>{this.props.index + 1}</div>
                 <div className="codeText" ref={this.codeTextRef}>{
                     spans.map((item, key) => { if(item!==""){return<CodeSpan code={item} key={key}/>}else{return null} } )
@@ -25,7 +30,12 @@ class CodeLine extends React.Component {
             </div>
         )
     }
-}
+};
 
+const mapStateToProps = (state) => {
+    return{
+        sortingControllerReducer: state.sortingControllerReducer
+    };
+};
 
-export default CodeLine;
+export default connect(mapStateToProps)(CodeLine);

@@ -14,7 +14,7 @@ class MainContainer extends React.Component {
         this.vlOnMouseMove = this.vlOnMouseMove.bind(this);
         this.vlOnMouseDown = this.vlOnMouseDown.bind(this);
         this.vlOnMouseUp = this.vlOnMouseUp.bind(this);
-    }
+    };
 
     vlOnMouseMove(event){
         let totalHeight = document.getElementById("mainContentDiv").offsetHeight;
@@ -24,17 +24,17 @@ class MainContainer extends React.Component {
         let y = Math.min(Math.max((controllerHeight * 100)/ totalHeight - 1, 4), 98);
         this.props.setContentHeight(`${x}%`);
         this.props.setControllerHeight(`${y}%`);
-    }
+    };
 
     vlOnMouseDown(){
         window.addEventListener("mousemove", this.vlOnMouseMove, false);
         window.addEventListener("mouseup", this.vlOnMouseUp, false);
-    }
+    };
 
     vlOnMouseUp(){
         window.removeEventListener("mousemove", this.vlOnMouseMove, false);
         window.removeEventListener("mouseup", this.vlOnMouseUp, false);
-    }
+    };
 
     render(){
 
@@ -57,8 +57,8 @@ class MainContainer extends React.Component {
                 </div>
             </div>
         );
-    }
-}
+    };
+};
 
 const mapStateToProps = (state) => {
     return{
@@ -75,7 +75,7 @@ const mapDispatchToProps = (dispatch) => {
         setControllerHeight: (value) => {
             dispatch(setControllerHeight(value));
         }
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

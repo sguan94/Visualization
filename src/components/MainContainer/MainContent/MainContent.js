@@ -38,7 +38,7 @@ class MainContent extends React.Component {
 
     setWidth = (codeWidth) => {
         let totalWidth = document.getElementById("mainContent").offsetWidth;
-        let y = ((codeWidth + 40) * 100)/ totalWidth;
+        let y = ((codeWidth + 21) * 100)/ totalWidth;
         let x = 98 - y;
         this.props.setViewWidth(`${y}%`);
         this.props.setCodeWidth(`${x}%`);

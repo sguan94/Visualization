@@ -7,6 +7,14 @@
     justify-content: flex-start;
     animation: fadein 1s;
 }
+.codeLineHightlight {
+    display: flex;
+    background: yellowgreen;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    animation: fadein 1s;
+}
 @keyframes fadein {
     from    {opacity: 0;}
     to      {opacity: 1;}
