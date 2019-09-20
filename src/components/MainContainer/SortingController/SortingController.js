@@ -1,11 +1,18 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setHighlight} from "../../../actions/sortingControllerAction";
+import {setHighlight, setTheArray, clearTheArray} from "../../../actions/sortingControllerAction";
+import TextInput from "./TextInput";
+import "../../../css/SortingController.css"
 
 class SortingController extends React.Component {
 
     constructor(){
         super();
+        this.placeHolder = "";
+    }
+
+    generateArray(){
+        console.log(Math.random(100));
     }
 
     next(){
@@ -20,12 +27,34 @@ class SortingController extends React.Component {
         }
     }
 
+    submitArray(array){
+        let tempArr = array.split(',');
+        if(tempArr[0] === ""){
+            this.props.clearTheArray();
+        }else{
+            this.props.setTheArray(tempArr);
+        }
+    }
+
     render(){
+        if(this.props.sortingControllerReducer.theArray.length === 0){
+            this.placeHolder = "Input array here...";
+        }else{
+            this.placeHolder = this.props.sortingControllerReducer.theArray.join();
+        }
+        
+        // this.placeHolder=(this.props.sortingControllerReducer.theArray===[]?"Input array here...":this.props.sortingControllerReducer.theArray.join());
+        // console.log(this.placeHolder);
         return (
             <div id="sortingController">
-                <button onClick={this.prev.bind(this)}>prev</button>
-                <button onClick={this.next.bind(this)}>next</button>
-            </div>
+                
+                <TextInput handleClick={this.submitArray.bind(this)} placeHolder={this.placeHolder}/>
+                <div className="buttonList">
+                    {/* <button onClick={this.prev.bind(this)}>prev</button>
+                    <button onClick={this.next.bind(this)}>next</button>
+                    <button onClick={this.generateArray}>Generate Array</button> */}
+                </div>
+             </div>
         );
     }
 };
@@ -40,6 +69,12 @@ const mapDispatchToProps = (dispatch) => {
     return{
         setHighlight: (value) => {
             dispatch(setHighlight(value));
+        },
+        setTheArray: (value) => {
+            dispatch(setTheArray(value));
+        },
+        clearTheArray: () => {
+            dispatch(clearTheArray());
         }
     };
 };

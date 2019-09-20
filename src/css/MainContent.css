@@ -14,7 +14,8 @@
     padding-top: 1vw; 
     padding-bottom: 1vw; 
     padding-left: 1vw; 
-    padding-right: 1vw; 
+    padding-right: 1vw;
+    overflow: hidden;
 }
 
 #verticalLine {

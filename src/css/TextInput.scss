@@ -1,0 +1,86 @@
+$input-background: rgb(255, 239, 210);
+$input-text-inactive: #7881A1;
+$input-text-active: #BFD2FF;
+
+#textInput {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding: 0.7vw 1vw 0.7vw;
+    background: $input-background;
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 10;
+        height: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-position: 0% 0%;
+        background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+        background-size: 500% auto;
+        animation: gradient 3s linear infinite;
+    }
+}
+@keyframes gradient { 
+    0%{
+        background-position:0 0
+    }
+    100%{
+        background-position:100% 0
+    }
+}
+
+#textInput input { 
+    border-style: none; 
+    background: transparent; 
+    outline: none; 
+}
+#ti {
+    flex-grow: 1;
+    border: none;
+    width: 90%;
+    vertical-align: middle;
+    line-height: 2vw;
+    &::-webkit-input-placeholder {
+        color: $input-text-inactive;
+        font-style: italic;
+    }
+}
+
+#textInput button, #textInput button:focus { 
+    padding: 0; 
+    background: none; 
+    border: none; 
+    outline: none; 
+}
+#tiButton {
+    color:  $input-text-inactive;
+    vertical-align: middle;
+    transition: color .25s;
+    width: 10%;
+    &:hover {
+        color: $input-text-active;
+    }
+}
+
+.promptDiv {
+    position: absolute;
+    background: rgb(220, 210, 247);
+    color: $input-text-inactive;
+    border-radius: 2px;
+    text-align: center;
+    width: 250px;
+    height: 50px;
+    display: none;
+}
+#textInput:hover .promptDiv{
+    display: block;
+    z-index: 20;
+}

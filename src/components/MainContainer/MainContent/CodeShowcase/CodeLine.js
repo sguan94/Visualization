@@ -12,7 +12,14 @@ class CodeLine extends React.Component {
     }
     
     componentDidMount(){
-        this.props.getLength(this.indexRef.current.offsetWidth + this.codeTextRef.current.offsetWidth);
+
+        // console.log(this.indexRef.current.offsetWidth + this.codeTextRef.current.offsetWidth +
+        //     parseInt(window.getComputedStyle(this.codeTextRef.current).getPropertyValue('padding-left'), 10) +
+        //     parseInt(window.getComputedStyle(this.indexRef.current).getPropertyValue('padding-right'), 10));
+
+        this.props.getLength(this.indexRef.current.offsetWidth + this.codeTextRef.current.offsetWidth +
+            parseInt(window.getComputedStyle(this.codeTextRef.current).getPropertyValue('padding-left'), 10) +
+            parseInt(window.getComputedStyle(this.indexRef.current).getPropertyValue('padding-right'), 10));
     }
 
     render(){

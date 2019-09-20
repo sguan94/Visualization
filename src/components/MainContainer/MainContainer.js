@@ -20,8 +20,8 @@ class MainContainer extends React.Component {
         let totalHeight = document.getElementById("mainContentDiv").offsetHeight;
         let contentHeight = event.pageY - document.getElementById("codeViewDiv").getBoundingClientRect().y;
         let controllerHeight = totalHeight - contentHeight;
-        let x = Math.min(Math.max((contentHeight * 100)/ totalHeight - 1, 4), 98);
-        let y = Math.min(Math.max((controllerHeight * 100)/ totalHeight - 1, 4), 98);
+        let x = Math.min(Math.max((contentHeight * 100)/ totalHeight - 1, 6), 98);
+        let y = Math.min(Math.max((controllerHeight * 100)/ totalHeight - 1, 6), 98);
         this.props.setContentHeight(`${x}%`);
         this.props.setControllerHeight(`${y}%`);
     };
