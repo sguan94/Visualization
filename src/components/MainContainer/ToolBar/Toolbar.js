@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/Toolbar.css';
+import '../../../css/Toolbar.scss';
 import DrawerToggleButton from "./DrawerToggleButton";
 
 class Toolbar extends React.Component{

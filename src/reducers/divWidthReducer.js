@@ -1,5 +1,5 @@
 const divWidthReducer = (state = {
-    viewWidth: "68%",
+    viewWidth: "70%",
     codeWidth: "30%"
 }, action) => {
     switch (action.type) {

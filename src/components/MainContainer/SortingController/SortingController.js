@@ -1,8 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import {setHighlight, setTheArray, clearTheArray} from "../../../actions/sortingControllerAction";
-import TextInput from "./TextInput";
-import "../../../css/SortingController.css"
+import SCButton from "./SCButton";
+import ArrayInput from "./ArrayInput";
+import "../../../css/SortingController.scss"
 
 class SortingController extends React.Component {
 
@@ -48,11 +49,11 @@ class SortingController extends React.Component {
         return (
             <div id="sortingController">
                 
-                <TextInput handleClick={this.submitArray.bind(this)} placeHolder={this.placeHolder}/>
+                <ArrayInput handleClick={this.submitArray.bind(this)} placeHolder={this.placeHolder}/>
                 <div className="buttonList">
                     {/* <button onClick={this.prev.bind(this)}>prev</button>
-                    <button onClick={this.next.bind(this)}>next</button>
-                    <button onClick={this.generateArray}>Generate Array</button> */}
+                    <button onClick={this.next.bind(this)}>next</button> */}
+                    {/* <SCButton onClick={this.generateArray}>Generate Array</SCButton> */}
                 </div>
              </div>
         );

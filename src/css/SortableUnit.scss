@@ -1,0 +1,10 @@
+@import "./Colors.scss";
+
+.sortableUnit {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.rect {
+    background: $SortableRect;
+}

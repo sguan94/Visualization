@@ -1,3 +1,5 @@
+@import "./Colors.scss";
+
 .toggle-button {
     display: flex;
     flex-direction: column;
@@ -17,7 +19,7 @@
 .toggle-button__line1 {
     width: 30px;
     height: 2px;
-    background: white;
+    background: $DrawerToggleButtonLine;
     transform: translateY(0) rotate(0);
     transform-origin: center;
     transition: transform 0.3s ease-out;
@@ -29,7 +31,7 @@
 .toggle-button__line2 {
     width: 30px;
     height: 2px;
-    background: white;
+    background: $DrawerToggleButtonLine;
     transform: translateY(0) rotate(0deg);
     transition: transform 0.3s ease-out;
 }
@@ -40,7 +42,7 @@
 .toggle-button__line3 {
     width: 30px;
     height: 2px;
-    background: white;
+    background: $DrawerToggleButtonLine;
     transform: translateY(0) rotate(0);
     transform-origin: center;
     transition: transform 0.3s ease-out;

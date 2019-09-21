@@ -1,14 +1,13 @@
 @import "./Colors.scss";
 
-.button_su{
+.buttonDiv{
     width: 100%;
     overflow: hidden;
     position: relative;
     display: inline-block;
-    border-radius: 3px;
 }
 
-.su_button_circle{
+.buttonCircle{
     background-color: rgb(20, 20, 20);
     border-radius: 1000px;
     position: absolute;
@@ -22,28 +21,30 @@
     /*animation-timing-function: ease-in-out; */
 }
 
-.button_su_inner{
+.buttonLink{
     width: 100%;
+    height: 100%;
     display: inline-block;
-    background:#09194d;
-    color: white;
+    background:$sideDrawerButtonBackground;
+    color: $sideDrawerButtonText;
     text-decoration: none;
-    font-size: 1.3vw;
-    font-weight: bolder;
-    text-align: center;
-    border-radius: 3px;
+    font-size: 1.1vw;
+    text-align: start;
+    margin-left: 2.5vw;
     transition: 400ms;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     z-index: 2;
 }
 
-.button_su_inner a:hover, a:visited, a:link, a:active{
+.buttonLink a:hover, a:visited, a:link, a:active{
     color: $sideDrawerText;
     text-decoration: none;
 }
 
-.button_text_container{
+.buttonText{
     width: 100%;
+    height: 100%;
     position: relative;
     z-index: 2;
 }
@@ -62,14 +63,14 @@
         height: 0px;
         margin-left: 0px;
         margin-top: 0px;
-        background-color: #09194d;
+        background-color: $sideDrawerButtonBubbleStart;
     }
     100% {
         width: 400px;
         height: 400px;
         margin-left: -200px;
         margin-top: -200px;
-        background-color:  #a1ddffcc;
+        background-color:  $sideDrawerButtonBubbleEnd;
     }
 }
 
@@ -79,13 +80,13 @@
         height: 400px;
         margin-left: -200px;
         margin-top: -200px;
-        background-color:  #a1ddffcc;
+        background-color:  $sideDrawerButtonBubbleEnd;
     }
     100% {
         width: 0px;
         height: 0px;
         margin-left: 0px;
         margin-top: 0px;
-        background-color: #09194d;
+        background-color: $sideDrawerButtonBubbleStart;
     }
 }

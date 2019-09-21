@@ -3,7 +3,6 @@
 .side-drawer {
     position: relative;
     box-shadow: 5px 0 5px -1px  rgba(0, 0, 0, 0.5);
-    background: $sideDrawerBackground;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -11,22 +10,49 @@
 }
 
 .side-drawer-header {
-    flex-grow: 1;
-    height: 7%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background: $sideDrawerHeader;
-    color: $sideDrawerText;
+    color: $sideDrawerTitle;
     text-decoration: none;
-    font-size: 2.5vw;
+    font-size: 1.8vw;
 }
+
+.buttonListTitle {
+    display: flex;
+    flex-direction: column-reverse;
+    background: $sideDrawerButtonListTitleBackground;
+}
+.titleSpacer {
+    height: max-content;
+}
+.titleContent {
+    height: 2.5vw;
+    display: flex;
+    flex-direction: row;
+}
+.titleContent img{
+    margin-left: 10px;
+    align-self: center;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.titleContent span{
+    align-self: center;
+    color: $sideDrawerButtonListTitleText;
+    height: 2vw;
+    font-size: 1.2vw;
+    margin-left: 0.3vw;
+}
+
 .side-drawer-buttonList {
-    height: 93%;
-    background:#09194d;
+    height: 94%;
+    background:$sideDrawerBackground;
     display: flex;
     flex-direction: column;
-    margin-top: 3%;
+    // margin-top: 3%;
     overflow: hidden;
 }

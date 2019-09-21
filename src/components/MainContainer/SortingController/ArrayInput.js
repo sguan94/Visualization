@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDom from 'react-dom';
-import "../../../css/TextInput.scss";
+import "../../../css/ArrayInput.scss";
 
-class TextInput extends React.Component {
+class ArrayInput extends React.Component {
 
     constructor(){
         super();
@@ -111,4 +111,4 @@ class TextInput extends React.Component {
     }
 };
 
-export default TextInput;
+export default ArrayInput;

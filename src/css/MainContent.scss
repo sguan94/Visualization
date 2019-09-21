@@ -1,3 +1,5 @@
+@import "./Colors.scss";
+
 #mainContent {
     position: relative;
     display: flex;
@@ -9,8 +11,8 @@
 
 #viewDiv {
     display: flex;
-    border-radius: 1vw;
-    background: wheat;
+    border-radius: 3px;
+    background: $MainContentViewDiv;
     padding-top: 1vw; 
     padding-bottom: 1vw; 
     padding-left: 1vw; 
@@ -19,14 +21,14 @@
 }
 
 #verticalLine {
-    width: 2%;
+    width: 8px;
     cursor: col-resize;
 }
 
 #codeDiv {
     display: flex;
-    border-radius: 1vw;
-    background: wheat;
+    border-radius: 3px;
+    background: $MainContentCodeDiv;
     padding-top: 1vw; 
     padding-bottom: 1vw; 
     padding-left: 1vw; 

@@ -1,6 +1,9 @@
+@import "./Colors.scss";
+
 .toolbar {
-    flex-grow: 1;
-    background-color: #7da0ff;
+    width: 100%;
+    height: 100%;
+    background-color: $ToolbarTitleBackground;
 }
 .toolbar__navigation {
     display: flex;

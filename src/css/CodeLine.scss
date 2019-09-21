@@ -7,9 +7,9 @@
     justify-content: flex-start;
     animation: fadein 1s;
 }
-.codeLineHightlight {
+.codeLineHighlight {
     display: flex;
-    background: yellowgreen;
+    background: $CodeLineHighlight;
     flex-direction: row;
     align-content: center;
     justify-content: flex-start;

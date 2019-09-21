@@ -67,14 +67,14 @@ class SideDrawerButton extends React.Component {
 
     render(){
         return (
-            <div className="button_su" onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onClick={() => this.handleClick()}>
+            <div className="buttonDiv" onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onClick={() => this.handleClick()}>
                 <span className={
-                            "su_button_circle " + 
+                            "buttonCircle " + 
                             (this.state.enter ? 'explode-circle' : '') + 
                             (this.state.leave ? 'desplode-circle' : '')}
                       style={{left: this.state.relX, top: this.state.relY}}></span>
-                <a href="#" className="button_su_inner">
-                    <span className="button_text_container">{this.props.text}</span>
+                <a href="#" className="buttonLink">
+                    <span className="buttonText">{this.props.text}</span>
                 </a>
             </div>
         );

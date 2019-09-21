@@ -1,7 +1,46 @@
-$titleColor: rgb(50, 125, 215);
+$titleColor: rgb(125, 125, 215);
 
-$sideDrawerHeader: rgb(35, 35, 150);
-$sideDrawerBackground: rgb(20, 20, 100);
+// SideDrawer =============================================================
+$sideDrawerHeader: rgb(100, 120, 240);
+$sideDrawerTitle: white;
+$sideDrawerBackground: rgb(100, 120, 240);
+$sideDrawerButtonListTitleBackground: rgb(120, 180, 255);
+$sideDrawerButtonListTitleText: white;
 $sideDrawerText: rgb(250, 250, 250);
 
-$CodeLineIndex: rgb(160, 160, 160);
+    // SideDrawerButton ===================================================
+    $sideDrawerButtonBackground: rgb(100, 120, 240);
+    $sideDrawerButtonText: white;
+    $sideDrawerButtonBubbleStart: rgb(120, 180, 255);
+    $sideDrawerButtonBubbleEnd: rgb(0, 50, 100);
+
+// MainContainer ==========================================================
+
+    // Toolbar ============================================================
+    $ToolbarTitleBackground: rgb(100, 120, 240);
+    $ToolbarTitleText: white; // not used yet
+    $DrawerToggleButtonLine: white;
+
+    //TitleDiv ============================================================
+    $TitleBackground: rgb(240, 250, 250);
+    $TitleTextColor: rgb(0, 50, 100);
+
+    // MainContent ========================================================
+    $MainContentViewDiv: rgb(240, 250, 250);
+    $MainContentCodeDiv: rgb(240, 250, 250);
+
+        // CodeShowcase ===================================================
+        $CodeLineIndex: rgb(160, 160, 160);
+        $CodeLineHighlight: yellowgreen;
+
+        // ViewShowcase ===================================================
+        $SortableRect: rgb(120, 180, 255);
+        $RectIndex: rgb(0, 50, 100);
+
+        // SortingController ==============================================
+        $SortingControllerBackground: rgb(240, 250, 250);
+
+            // ArrayInput =================================================
+            $array-input-background: rgb(250, 250, 250);
+            $array-input-text-inactive: #7881A1;
+            $array-input-text-active: #BFD2FF;

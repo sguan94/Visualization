@@ -1,11 +1,13 @@
+@import "./Colors.scss";
+
 #sortingController {
-    background: wheat;
+    background: $SortingControllerBackground;
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    border-radius: 1vw;
+    border-radius: 3px;
     width: 100%;
     height: 100%;
     overflow: hidden;

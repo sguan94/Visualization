@@ -1,13 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
-import '../../../../css/ViewShowcase.css';
+import SortableUnit from "./SortableUnit";
+import '../../../../css/ViewShowcase.scss';
+
 
 class ViewShowcase extends React.Component {
 
     constructor(){
         super();
-        this.containerRef = React.createRef();
+        this.unitContainerRef = React.createRef();
         this.unitHeight = 0;
+        this.unitWidth = 0;
     }
 
     shouldComponentUpdate(nextProps){
@@ -20,19 +23,28 @@ class ViewShowcase extends React.Component {
                 max = parseInt(nextProps.theArray[i]);
             }
         }
-        console.log(max);
-        this.unitHeight = this.containerRef.current.offsetHeight / max;
+        console.log(this.unitContainerRef.current.offsetWidth / nextProps.theArray.length);
+        this.unitHeight = this.unitContainerRef.current.offsetHeight / max;
+        this.unitWidth = Math.min(this.unitContainerRef.current.offsetWidth / nextProps.theArray.length, 50);
         return true;
     }
 
     render(){
-
         return (
             <div className="viewShowcase">
-                <div className="unitContainer" ref={this.containerRef}>
+                <div className="unitContainer" ref={this.unitContainerRef}>
                     {this.props.theArray.map((item, key) => {
-                        console.log(this.containerRef.current);
-                        return <div className="unit" key={key} style={{height: `${this.unitHeight * item}px`}}></div>
+                        console.log(this.unitContainerRef.current);
+                        return <SortableUnit key={key} item={item} unitHeight={this.unitHeight} unitWidth={this.unitWidth}/>
+                    })}
+                </div>
+                <div className="indexContainer">
+                    {this.props.theArray.map((item, key) => {
+                        return <div className="indexUnit" key={key} style={{
+                            width:`${this.unitWidth}px`,
+                            marginRight:`${this.unitWidth * 0.1}px`,
+                            marginLeft:`${this.unitWidth * 0.1}px`,
+                        }}>{key}</div>
                     })}
                 </div>
             </div>

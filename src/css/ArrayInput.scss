@@ -1,6 +1,4 @@
-$input-background: rgb(255, 239, 210);
-$input-text-inactive: #7881A1;
-$input-text-active: #BFD2FF;
+@import "./Colors.scss";
 
 #textInput {
     position: relative;
@@ -11,7 +9,7 @@ $input-text-active: #BFD2FF;
     margin: 0 auto;
     border-radius: 2px;
     padding: 0.7vw 1vw 0.7vw;
-    background: $input-background;
+    background: $array-input-background;
     &:after {
         content: "";
         position: absolute;
@@ -49,7 +47,7 @@ $input-text-active: #BFD2FF;
     vertical-align: middle;
     line-height: 2vw;
     &::-webkit-input-placeholder {
-        color: $input-text-inactive;
+        color: $array-input-text-inactive;
         font-style: italic;
     }
 }
@@ -61,19 +59,19 @@ $input-text-active: #BFD2FF;
     outline: none; 
 }
 #tiButton {
-    color:  $input-text-inactive;
+    color:  $array-input-text-inactive;
     vertical-align: middle;
     transition: color .25s;
     width: 10%;
     &:hover {
-        color: $input-text-active;
+        color: $array-input-text-active;
     }
 }
 
 .promptDiv {
     position: absolute;
     background: rgb(220, 210, 247);
-    color: $input-text-inactive;
+    color: $array-input-text-inactive;
     border-radius: 2px;
     text-align: center;
     width: 250px;

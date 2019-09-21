@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../css/DrawerToggleButton.css';
+import '../../../css/DrawerToggleButton.scss';
 import {connect} from "react-redux";
 import {toggleSideDrawer} from "../../../actions/sideDrawerAction";
 

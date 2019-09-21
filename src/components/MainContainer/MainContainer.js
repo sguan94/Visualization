@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {setContentHeight, setControllerHeight} from "../../actions/divHeightAction";
 import Toolbar from "./ToolBar/Toolbar";
 // import BackDrop from "./BackDrop/BackDrop";
-import '../../css/MainContainer.css';
+import '../../css/MainContainer.scss';
 import MainContent from "./MainContent/MainContent";
 import SortingController from "./SortingController/SortingController";
 

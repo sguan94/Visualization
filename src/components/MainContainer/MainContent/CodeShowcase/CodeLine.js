@@ -26,7 +26,7 @@ class CodeLine extends React.Component {
         let spans = this.props.code.split(/([\W+/])/);
         let codeClass = "codeLine";
         if((this.props.index + 1) === this.props.sortingControllerReducer.highlightLine){
-            codeClass = "codeLineHightlight";
+            codeClass = "codeLineHighlight";
         }
         return (
             <div className={codeClass} ref={this.props.setRef}>

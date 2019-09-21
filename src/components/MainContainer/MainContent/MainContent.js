@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import CodeShowcase from "./CodeShowcase/CodeShowcase";
 import ViewShowcase from "./ViewShowcase/ViewShowcase";
 import {setCodeWidth, setViewWidth} from "../../../actions/divWidthAction";
-import '../../../css/MainContent.css';
+import '../../../css/MainContent.scss';
 
 class MainContent extends React.Component {
 
@@ -19,8 +19,8 @@ class MainContent extends React.Component {
         let totalWidth = document.getElementById("mainContent").offsetWidth;
         let viewWidth = event.pageX - document.getElementById("mainContent").getBoundingClientRect().x;
         let codeWidth = totalWidth - viewWidth;
-        let x = Math.min(Math.max((viewWidth * 100)/ totalWidth - 1, 0), 98);
-        let y = Math.min(Math.max((codeWidth * 100)/ totalWidth - 1, 0), 98);
+        let x = Math.min(Math.max((viewWidth * 100)/ totalWidth, 0), 100);
+        let y = Math.min(Math.max((codeWidth * 100)/ totalWidth, 0), 100);
 
         this.props.setViewWidth(`${y}%`);
         this.props.setCodeWidth(`${x}%`);
@@ -39,7 +39,7 @@ class MainContent extends React.Component {
     setWidth = (codeWidth) => {
         let totalWidth = document.getElementById("mainContent").offsetWidth;
         let y = ((codeWidth + 21) * 100)/ totalWidth;
-        let x = 98 - y;
+        let x = 100 - y;
         this.props.setViewWidth(`${y}%`);
         this.props.setCodeWidth(`${x}%`);
     }
