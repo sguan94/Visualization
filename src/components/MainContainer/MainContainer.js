@@ -20,8 +20,8 @@ class MainContainer extends React.Component {
         let totalHeight = document.getElementById("mainContentDiv").offsetHeight;
         let contentHeight = event.pageY - document.getElementById("codeViewDiv").getBoundingClientRect().y;
         let controllerHeight = totalHeight - contentHeight;
-        let x = Math.min(Math.max((contentHeight * 100)/ totalHeight - 1, 6), 98);
-        let y = Math.min(Math.max((controllerHeight * 100)/ totalHeight - 1, 6), 98);
+        let x = Math.min(Math.max((contentHeight * 100) / totalHeight, 6), 100);
+        let y = Math.min(Math.max((controllerHeight * 100) / totalHeight, 6), 100);
         this.props.setContentHeight(`${x}%`);
         this.props.setControllerHeight(`${y}%`);
     };
@@ -37,7 +37,6 @@ class MainContainer extends React.Component {
     };
 
     render(){
-
         return (
             <div id="main-container">
                 <div className="toolBarDiv">

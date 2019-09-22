@@ -1,16 +1,14 @@
 import React from "react";
-import "../../../css/SCButton.css";
+import "../../../css/SCButton.scss";
 
 class SCButton extends React.Component {
-
-    constructor(){
-        super();
-    }
-
+    
     render(){
         return (
-            <div className="SCButton">
-                <button></button>
+            <div className="scbuttonDiv" align="center">
+                <button className="scbutton" onClick={this.props.onClick} disabled={this.props.disabled}>
+                    {this.props.text}
+                </button>
             </div>
         );
     }

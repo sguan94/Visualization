@@ -31,10 +31,12 @@ $sideDrawerText: rgb(250, 250, 250);
 
         // CodeShowcase ===================================================
         $CodeLineIndex: rgb(160, 160, 160);
-        $CodeLineHighlight: yellowgreen;
+        $CodeLineHighlight: rgb(120, 180, 255);
 
         // ViewShowcase ===================================================
+        $SortableRectIndex: rgb(0, 50, 100);
         $SortableRect: rgb(120, 180, 255);
+        $SortableRectNum: rgb(160, 160, 160);
         $RectIndex: rgb(0, 50, 100);
 
         // SortingController ==============================================
@@ -44,3 +46,7 @@ $sideDrawerText: rgb(250, 250, 250);
             $array-input-background: rgb(250, 250, 250);
             $array-input-text-inactive: #7881A1;
             $array-input-text-active: #BFD2FF;
+
+            // SCButton ===================================================
+            $SCButton-inactive: rgb(220, 220, 220);
+            $SCButton-hover: rgb(120, 180, 255);

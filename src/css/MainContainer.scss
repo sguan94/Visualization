@@ -23,7 +23,7 @@
     margin-top: 2%;
     margin-left: 3%;
     margin-right: 3%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 3px;
     color: $TitleTextColor;
     font-size: 1.4vw;
@@ -46,7 +46,7 @@
     display: flex;
 }
 #horizontalLine {
-    height: 5px;
+    height: 10px;
     cursor: row-resize;
 }
 #controllerDiv {

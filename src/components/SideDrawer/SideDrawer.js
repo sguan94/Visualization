@@ -25,7 +25,8 @@ class SideDrawer extends React.Component {
                 </div>
                 <div className="buttonListTitle">
                     <div className="titleContent">
-                        <img src="https://img.icons8.com/ultraviolet/480/000000/generic-sorting-2.png"/>
+                        <img src="https://img.icons8.com/ultraviolet/480/000000/generic-sorting-2.png"
+                        alt=""/>
                         <span>Sorting</span>
                     </div>
                 </div>

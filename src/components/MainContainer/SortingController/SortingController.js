@@ -10,10 +10,18 @@ class SortingController extends React.Component {
     constructor(){
         super();
         this.placeHolder = "";
+        this.exchangeButtonRef = React.createRef();
     }
 
     generateArray(){
-        console.log(Math.random(100));
+        let arrayLength = Math.max(3, Math.min(20, Math.round(Math.random() * 20)));
+        
+        let newArray = [];
+        for(let i = 0; i < arrayLength; i ++){
+            newArray[i] = Math.max(1, Math.min(50, Math.round(Math.random() * 50)));
+        }
+        console.log(newArray.join());
+        this.props.setTheArray(newArray);
     }
 
     next(){
@@ -37,23 +45,35 @@ class SortingController extends React.Component {
         }
     }
 
+    exchange(){
+        
+    }
+
     render(){
         if(this.props.sortingControllerReducer.theArray.length === 0){
             this.placeHolder = "Input array here...";
         }else{
-            this.placeHolder = this.props.sortingControllerReducer.theArray.join();
+            if(this.props.sortingControllerReducer.theArray.length > 8){
+                this.placeHolder = this.props.sortingControllerReducer.theArray.slice(0, 7).join() + "...";
+            }else{
+                this.placeHolder = this.props.sortingControllerReducer.theArray.join();
+            }
         }
         
         // this.placeHolder=(this.props.sortingControllerReducer.theArray===[]?"Input array here...":this.props.sortingControllerReducer.theArray.join());
         // console.log(this.placeHolder);
         return (
             <div id="sortingController">
-                
                 <ArrayInput handleClick={this.submitArray.bind(this)} placeHolder={this.placeHolder}/>
                 <div className="buttonList">
                     {/* <button onClick={this.prev.bind(this)}>prev</button>
                     <button onClick={this.next.bind(this)}>next</button> */}
-                    {/* <SCButton onClick={this.generateArray}>Generate Array</SCButton> */}
+                    <SCButton text="Generate Array"
+                        onClick={this.generateArray.bind(this)}
+                        disabled={false}/>
+                    <SCButton text="Exchange"
+                        onClick={this.exchange.bind(this)}
+                        disabled={this.props.sortingControllerReducer.theArray.length === 0}/>
                 </div>
              </div>
         );

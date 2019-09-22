@@ -73,9 +73,9 @@ class SideDrawerButton extends React.Component {
                             (this.state.enter ? 'explode-circle' : '') + 
                             (this.state.leave ? 'desplode-circle' : '')}
                       style={{left: this.state.relX, top: this.state.relY}}></span>
-                <a href="#" className="buttonLink">
+                <button>
                     <span className="buttonText">{this.props.text}</span>
-                </a>
+                </button>
             </div>
         );
     }

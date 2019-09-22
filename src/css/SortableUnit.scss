@@ -5,6 +5,19 @@
     flex-direction: column-reverse;
 }
 
-.rect {
+.sortableUnit .rectIndex {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    color: $SortableRectIndex;
+}
+
+.sortableUnit .rect {
     background: $SortableRect;
+}
+
+.sortableUnit .numLabel {
+    text-align: center;
+    color: $SortableRectNum;
+    font-size: 1vw;
 }

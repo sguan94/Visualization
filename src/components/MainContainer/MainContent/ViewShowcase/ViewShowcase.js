@@ -14,7 +14,7 @@ class ViewShowcase extends React.Component {
     }
 
     shouldComponentUpdate(nextProps){
-        if(typeof nextProps.theArray[0] === NaN){
+        if(isNaN(nextProps.theArray[0])){
             return false;
         }
         let max = parseInt(nextProps.theArray[0]);
@@ -23,8 +23,7 @@ class ViewShowcase extends React.Component {
                 max = parseInt(nextProps.theArray[i]);
             }
         }
-        console.log(this.unitContainerRef.current.offsetWidth / nextProps.theArray.length);
-        this.unitHeight = this.unitContainerRef.current.offsetHeight / max;
+        this.unitHeight = this.unitContainerRef.current.offsetHeight * 0.85 / max;
         this.unitWidth = Math.min(this.unitContainerRef.current.offsetWidth / nextProps.theArray.length, 50);
         return true;
     }
@@ -33,19 +32,11 @@ class ViewShowcase extends React.Component {
         return (
             <div className="viewShowcase">
                 <div className="unitContainer" ref={this.unitContainerRef}>
-                    {this.props.theArray.map((item, key) => {
-                        console.log(this.unitContainerRef.current);
-                        return <SortableUnit key={key} item={item} unitHeight={this.unitHeight} unitWidth={this.unitWidth}/>
-                    })}
-                </div>
-                <div className="indexContainer">
-                    {this.props.theArray.map((item, key) => {
-                        return <div className="indexUnit" key={key} style={{
-                            width:`${this.unitWidth}px`,
-                            marginRight:`${this.unitWidth * 0.1}px`,
-                            marginLeft:`${this.unitWidth * 0.1}px`,
-                        }}>{key}</div>
-                    })}
+                    {
+                    this.props.theArray.map((item, key) => {
+                        return <SortableUnit key={key} index={key} item={item} unitHeight={this.unitHeight} unitWidth={this.unitWidth}/>
+                    })
+                    }
                 </div>
             </div>
         );

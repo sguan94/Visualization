@@ -17,11 +17,13 @@
     padding-bottom: 1vw; 
     padding-left: 1vw; 
     padding-right: 1vw;
+    -moz-overflow: hidden;
+    -ms-overflow: hidden;
     overflow: hidden;
 }
 
 #verticalLine {
-    width: 8px;
+    width: 12px;
     cursor: col-resize;
 }
 
@@ -37,6 +39,8 @@
 .codeShowcaseContainer {
     display: flex;
     overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
 }
 .codeShowcaseContainer::-webkit-scrollbar { 
     display: none; 

@@ -3,18 +3,17 @@ import "../../../../css/SortableUnit.scss";
 
 class SortableUnit extends React.Component {
 
-    constructor(){
-        super();
-    }
-
     render(){
         return (
-            <div className="SortableUnit" className="sortableUnit" style={{
+            <div className="sortableUnit" style={{
                     width:`${this.props.unitWidth}px`,
                     marginRight:`${this.props.unitWidth * 0.1}px`,
                     marginLeft:`${this.props.unitWidth * 0.1}px`,
                 }}>
+                    {console.log(this.props.index)}
+                <div className="rectIndex">{this.props.index}</div>
                 <div className="rect" style={{height: `${this.props.unitHeight * this.props.item}px`}}></div>
+                <div className="numLabel">{this.props.item}</div>
             </div>
         );
     }

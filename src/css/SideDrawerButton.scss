@@ -21,25 +21,27 @@
     /*animation-timing-function: ease-in-out; */
 }
 
-.buttonLink{
+.buttonDiv button{
     width: 100%;
     height: 100%;
     display: inline-block;
+    border-style: none;
     background:$sideDrawerButtonBackground;
     color: $sideDrawerButtonText;
     text-decoration: none;
     font-size: 1.1vw;
     text-align: start;
-    margin-left: 2.5vw;
+    margin-left: 2.1vw;
     transition: 400ms;
     padding-top: 5px;
     padding-bottom: 5px;
     z-index: 2;
 }
 
-.buttonLink a:hover, a:visited, a:link, a:active{
+.buttonLink button:hover, button:visited, button:link, button:active{
     color: $sideDrawerText;
     text-decoration: none;
+    outline: none;
 }
 
 .buttonText{
@@ -51,10 +53,16 @@
 
 .explode-circle {
     animation: explode 0.75s forwards;
+    -webkit-animation: explode 0.75s forwards;
+    -moz-animation: explode 0.75s forwards;
+    -ms-animation: explode 0.75s forwards;
 }
 
 .desplode-circle{
     animation: desplode 0.75s forwards;
+    -webkit-animation: desplode 0.75s forwards;
+    -moz-animation: desplode 0.75s forwards;
+    -ms-zoom-animation: desplode 0.75s forwards;
 }
 
 @keyframes explode {
